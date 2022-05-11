@@ -2,6 +2,7 @@
 const pokemonContainer = document.querySelector('.pokemon-container');
 
 /* Fetch: Llamamos a la API y nos devuelve un json que procesamos */
+
 function fetchOnePokemon(id) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     .then(res => res.json())
@@ -22,8 +23,8 @@ function createPokemonCard(pokemon) {
     card.classList.add('pokemon-card');
 
     // Crear div con clase img-container
-    const sprinteContainer = document.createElement('div');
-    sprinteContainer.classList.add('img-container');
+    const spriteContainer = document.createElement('div');
+    spriteContainer.classList.add('img-container');
 
     // Crear tag de imagen. En API las imágenes aparecen como "sprites", y hay varias para elegir, nosotras escogemos la imagen por defecto (default)
     const sprite = document.createElement('img');
@@ -42,7 +43,7 @@ function createPokemonCard(pokemon) {
 
     // Añadir los elementos creados a la card
     sprinteContainer.appendChild(sprite);
-    card.appendChild(sprinteContainer);
+    card.appendChild(spriteContainer);
     card.appendChild(name);
     card.appendChild(aTag);
 
